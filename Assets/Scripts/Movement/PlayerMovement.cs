@@ -8,12 +8,8 @@ public class PlayerMovement : Gravity
     [SerializeField] float jumpHeight = 3;
     public float MaxJumpCount { get => maxJumpCount; set => maxJumpCount = value; }
     [SerializeField] float maxJumpCount = 1;
-
     [SerializeField] float currentJumpCount = 1;
-    [SerializeField] AudioSource hoverSound = default;
     [SerializeField] AudioSource jumpSound = default;
-    [SerializeField] bool isHovering = false;
-    [SerializeField] ParticleSystem hoverEffect = null;
 
     protected override void Update()
     {
@@ -24,16 +20,6 @@ public class PlayerMovement : Gravity
             currentJumpCount = maxJumpCount;
             velocity.y = -2f;
         }
-        if (!isGrounded && velocity.y < 0 && (Input.GetKey(KeyCode.LeftShift) || (Input.GetButton("Jump") && currentJumpCount < 1)) )
-        {
-            Hover();
-        }
-        else
-        {
-            isHovering = false;
-            hoverSound.Stop();
-            hoverEffect.Stop();
-        }
 
         if (Input.GetButtonDown("Jump") && currentJumpCount > 0)
         {
@@ -41,11 +27,7 @@ public class PlayerMovement : Gravity
         }
 
         Move();
-        
-        if (!isHovering)
-        {
-            Fall();
-        }
+        Fall();
     }
 
     void Move()
@@ -54,15 +36,6 @@ public class PlayerMovement : Gravity
         Vector3 move = (this.transform.right * input.x) + (this.transform.forward * input.y);
         move.Normalize();
         controller.Move(move * speed * Time.deltaTime);
-    }
-    void Hover()
-    {
-        isHovering = true;
-        velocity.y = -1f;
-        controller.Move(velocity * Time.deltaTime);
-        hoverEffect.Play();
-        if(!hoverSound.isPlaying)
-            hoverSound.Play();
     }
     void Jump()
     {
