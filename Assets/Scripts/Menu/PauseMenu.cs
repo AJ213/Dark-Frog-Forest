@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && PlayerHealth.playerDead == false)
+        /*if(Input.GetKeyDown(KeyCode.Escape) && PlayerHealth.playerDead == false)
         {
             if(GameIsPaused)
             {
@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
-        }
+        }*/
     }
 
     public virtual void Resume()

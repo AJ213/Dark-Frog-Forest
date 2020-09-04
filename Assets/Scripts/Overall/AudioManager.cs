@@ -35,10 +35,10 @@ public class AudioManager : MonoBehaviour
 	}
     private void Update()
     {
-        if(PlayerHealth.playerDead == true)
+        /*if(PlayerHealth.playerDead == true)
         {
 			Stop("Music");
-		}
+		}*/
     }
 
     private void Start()

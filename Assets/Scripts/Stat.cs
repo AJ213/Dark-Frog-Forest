@@ -13,7 +13,6 @@ public class Stat : MonoBehaviour
     public float RegenAmount { get { return regenAmount; } set { regenAmount = value; } }
     [SerializeField] protected float regenAmount = default;
     protected float currentStat = default;
-    [SerializeField] protected Bar statBar = null;
 
     protected virtual void Start()
     {
@@ -25,10 +24,7 @@ public class Stat : MonoBehaviour
         if (maxStat < 1)
             maxStat = 1;
         CurrrentStat = maxStat;
-        if (statBar != null)
-        {
-            statBar.SetMaxValue(maxStat);
-        }
+
     }
 
     protected virtual void Update()
@@ -57,10 +53,6 @@ public class Stat : MonoBehaviour
                 currentStat = maxStat;
             }
 
-            if (statBar != null)
-            {
-                statBar.SetValue(currentStat);
-            }
         }
     }
 }

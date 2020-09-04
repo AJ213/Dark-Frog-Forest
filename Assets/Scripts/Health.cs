@@ -7,8 +7,7 @@ public class Health : Stat
     [SerializeField] protected GameObject deathEffect = default;
     [SerializeField] protected AudioSource hitSound = default;
     [SerializeField] protected bool isDead = false;
-    
-    
+     
     public override float CurrrentStat
     {
         get
@@ -21,8 +20,7 @@ public class Health : Stat
             {
                 PlayHitSound();
             }
-
-                currentStat = value;
+            currentStat = value;
             if (currentStat <= 0 && isDead == false)
             {
                 Death();
@@ -32,16 +30,7 @@ public class Health : Stat
             {
                 currentStat = maxStat;
             }
-
-            if (statBar != null)
-            {
-                statBar.SetValue(currentStat);
-            }
         }
-    }
-    void Awake()
-    {
-        isDead = false;
     }
     protected virtual void Death()
     {
