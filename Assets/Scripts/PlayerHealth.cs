@@ -8,6 +8,7 @@ public class PlayerHealth : Health
     protected override void Death()
     {
         PlayerDead.Invoke();
+        Destroy(this.gameObject);
     }
 
 }
