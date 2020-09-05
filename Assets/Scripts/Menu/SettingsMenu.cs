@@ -11,7 +11,7 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] TMP_Dropdown resolutionDropdown = default;
     /*[SerializeField] TMP_Dropdown graphicsDropdown = default;
     [SerializeField] Toggle fullscreenToggle = default;*/
-    [SerializeField] Slider volume = default;
+    //[SerializeField] Slider volume = default;
     /*[SerializeField] Slider sensitivityX = default;
     [SerializeField] Slider sensitivityY = default;*/
     /*[SerializeField] Slider fov = default;*/
@@ -19,12 +19,12 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     int currentResolutionIndex;
     int currentQualityIndex;
-    void Start()
+    void Awake()
     {
         //InitializeResolutions();
-        LoadSettings();
+        //LoadSettings();
     }
-
+    
     void InitializeResolutions()
     {
         resolutions = Screen.resolutions;
@@ -86,28 +86,28 @@ public class SettingsMenu : MonoBehaviour
         Screen.fullScreen = isFullscreen;
     }
 
-    public void SaveSettings()
+    /*public void SaveSettings()
     {
         PlayerPrefs.SetInt("resolution", currentResolutionIndex);
 
         float volume = 0;
-        audioMixer.GetFloat("Master Volume", out volume);
+        audioMixer.GetFloat("Main", out volume);
         PlayerPrefs.SetFloat("volume", volume);
 
-        /*PlayerPrefs.SetFloat("sensitivityX", CameraLook.MouseSensitivityX);
+        *//*PlayerPrefs.SetFloat("sensitivityX", CameraLook.MouseSensitivityX);
         PlayerPrefs.SetFloat("sensitivityY", CameraLook.MouseSensitivityY);*/
         /*PlayerPrefs.SetFloat("fov", Camera.main.fieldOfView);
         PlayerPrefs.SetInt("qualityIndex", currentQualityIndex);
-        PlayerPrefs.SetInt("isFullscreen", Convert.ToInt32(Screen.fullScreen));*/
+        PlayerPrefs.SetInt("isFullscreen", Convert.ToInt32(Screen.fullScreen));*//*
         PlayerPrefs.Save();
     }
     public void LoadSettings()
     {
-        /*SetResolution(PlayerPrefs.GetInt("resolution", currentResolutionIndex));
-        resolutionDropdown.value = currentResolutionIndex;*/
+        *//*SetResolution(PlayerPrefs.GetInt("resolution", currentResolutionIndex));
+        resolutionDropdown.value = currentResolutionIndex;*//*
         audioMixer.SetFloat("Main", Mathf.Log10(PlayerPrefs.GetFloat("volume", 0)) * 20);
         volume.value = Mathf.Pow(10, PlayerPrefs.GetFloat("volume", 0)/20);
-        /*CameraLook.MouseSensitivityX = PlayerPrefs.GetFloat("sensitivityX", 300);
+        *//*CameraLook.MouseSensitivityX = PlayerPrefs.GetFloat("sensitivityX", 300);
         sensitivityX.value = CameraLook.MouseSensitivityX;
         CameraLook.MouseSensitivityY = PlayerPrefs.GetFloat("sensitivityY", 300);
         sensitivityY.value = CameraLook.MouseSensitivityY;*/
@@ -116,7 +116,7 @@ public class SettingsMenu : MonoBehaviour
         SetQuality(PlayerPrefs.GetInt("qualityIndex", 0));
         graphicsDropdown.value = PlayerPrefs.GetInt("qualityIndex", 0);
         Screen.fullScreen = Convert.ToBoolean(PlayerPrefs.GetInt("isFullscreen", 1));
-        fullscreenToggle.isOn = Screen.fullScreen;*/
-    }
+        fullscreenToggle.isOn = Screen.fullScreen;*//*
+    }*/
 
 }

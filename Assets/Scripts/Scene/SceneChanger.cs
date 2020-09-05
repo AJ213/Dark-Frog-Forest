@@ -9,8 +9,7 @@ public class SceneChanger : MonoBehaviour
 {
     private int indexToLoad = 0;
     [SerializeField]AudioMixer mixer = default;
-
-    private void Awake()
+    private void Start()
     {
         StartCoroutine(FadeMixerGroup.StartFade(mixer, "Main", 0.2f, 1f));
     }
@@ -36,11 +35,12 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadScene()
     {
-        if(indexToLoad == -1)
+        if (indexToLoad == -1)
         {
             Application.Quit();
             return;
         }
+        
         SceneManager.LoadScene(indexToLoad);
     }
 }
