@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     private int indexToLoad = 0;
-    [SerializeField]AudioMixer mixer = default;
+    [SerializeField] AudioMixer mixer = default;
+    [SerializeField] GameObject exitMenu = default;
     private void Start()
     {
         StartCoroutine(FadeMixerGroup.StartFade(mixer, "Main", 0.2f, 1f));
@@ -24,13 +25,31 @@ public class SceneChanger : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
-            if(Input.GetKeyDown(KeyCode.Escape))
+            if(Input.GetKeyDown(KeyCode.Escape) && !exitMenu.activeSelf)
             {
+                exitMenu.SetActive(true);
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioManager>().Play("ButtonPress");
                 Cursor.lockState = CursorLockMode.None;
-                
-                FadeToScene(0);
+            }
+            else if(Input.GetKeyDown(KeyCode.Escape) && exitMenu.activeSelf)
+            {
+                CloseMenu();
             }
         }
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                FadeToScene(-1);
+            }
+        }
+    }
+
+    public void CloseMenu()
+    {
+        exitMenu.SetActive(false);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioManager>().Play("ButtonPress");
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void LoadScene()
