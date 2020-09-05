@@ -580,7 +580,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476547268}
-  m_LocalRotation: {x: 0.10649046, y: 0.0000000042771364, z: -4.5807902e-10, w: 0.9943138}
+  m_LocalRotation: {x: 0.10649046, y: -0.0000000042771338, z: 4.580787e-10, w: 0.9943138}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2644,7 +2644,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 0, g: 0, b: 0, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6278,7 +6278,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050604978}
-  m_LocalRotation: {x: 0.14253858, y: 0.000000008515345, z: -0.0000000012262865, w: 0.98978925}
+  m_LocalRotation: {x: 0.14253858, y: -0.000000008515345, z: 0.0000000012262865, w: 0.98978925}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6802,8 +6802,28 @@ MonoBehaviour:
   mixerGroup: {fileID: 24300002, guid: 697025bdf254b1d4082477940fed2375, type: 2}
   sounds:
   - name: Music
+    clip: {fileID: 8300000, guid: be36e269071e1db4b8647d3336071ec0, type: 3}
+    volume: 0
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0
+    priority: 0
+    loop: 1
+    mixerGroup: {fileID: 24300002, guid: 697025bdf254b1d4082477940fed2375, type: 2}
+    source: {fileID: 0}
+  - name: CharacterSounds
+    clip: {fileID: 8300000, guid: b67a52cb73e2c484a9eb8e004d50b6bd, type: 3}
+    volume: 0.025
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0
+    priority: 0
+    loop: 1
+    mixerGroup: {fileID: 24300002, guid: 697025bdf254b1d4082477940fed2375, type: 2}
+    source: {fileID: 0}
+  - name: Ambience
     clip: {fileID: 8300000, guid: 226d3580c7c4036449a4d172d9001178, type: 3}
-    volume: 0.2
+    volume: 0.15
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0

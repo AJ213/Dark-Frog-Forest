@@ -1,7 +1,7 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
 
@@ -43,7 +43,17 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-		Play("Music");
+
+		if (SceneManager.GetActiveScene().buildIndex == 0)
+		{
+			Play("Music");
+		}
+		if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+			Play("Music");
+			Play("Ambience");
+			Play("CharacterSounds");
+		}
     }
 
     public void Play(string sound)
