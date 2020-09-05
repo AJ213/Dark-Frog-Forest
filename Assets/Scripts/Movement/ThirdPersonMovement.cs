@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-    public CharacterController controller;
-    public Transform cam;
+    [SerializeField] CharacterController controller = default;
+    [SerializeField] Transform cam = default;
 
-    public float speed = 6;
-    public float gravity = -9.81f;
-    public float jumpHeight = 3;
+    [SerializeField] float speed = 6;
+    [SerializeField] float gravity = -9.81f;
+    [SerializeField] float jumpHeight = 3;
     Vector3 velocity;
     bool isGrounded;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    [SerializeField] Transform groundCheck = default;
+    [SerializeField] float groundDistance = 0.4f;
+    [SerializeField] LayerMask groundMask = default;
 
     float turnSmoothVelocity;
-    public float turnSmoothTime = 0.1f;
+    [SerializeField] float turnSmoothTime = 0.1f;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
-        //jump
+        Jump();
+        Fall();
+        Move();
+    }
+
+    void Jump()
+    {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -37,15 +43,20 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
-        //gravity
+    }
+    void Fall()
+    {
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-        //walk
+    }
+
+    void Move()
+    {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if(direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);

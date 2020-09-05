@@ -12,8 +12,8 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] TMP_Dropdown graphicsDropdown = default;
     [SerializeField] Toggle fullscreenToggle = default;
     [SerializeField] Slider volume = default;
-    [SerializeField] Slider sensitivityX = default;
-    [SerializeField] Slider sensitivityY = default;
+    /*[SerializeField] Slider sensitivityX = default;
+    [SerializeField] Slider sensitivityY = default;*/
     [SerializeField] Slider fov = default;
 
     Resolution[] resolutions;
@@ -57,14 +57,14 @@ public class SettingsMenu : MonoBehaviour
         audioMixer.SetFloat("Master Volume", Mathf.Log10(volume)*20);
     }
 
-    public void SetSensitivityX(float sensitivityX)
+/*    public void SetSensitivityX(float sensitivityX)
     {
         CameraLook.MouseSensitivityX = sensitivityX;
     }
     public void SetSensitivityY(float sensitivityY)
     {
         CameraLook.MouseSensitivityY = sensitivityY;
-    }
+    }*/
 
     public void SetFOV(float fov)
     {
@@ -90,8 +90,8 @@ public class SettingsMenu : MonoBehaviour
         audioMixer.GetFloat("Master Volume", out volume);
         PlayerPrefs.SetFloat("volume", volume);
 
-        PlayerPrefs.SetFloat("sensitivityX", CameraLook.MouseSensitivityX);
-        PlayerPrefs.SetFloat("sensitivityY", CameraLook.MouseSensitivityY);
+        /*PlayerPrefs.SetFloat("sensitivityX", CameraLook.MouseSensitivityX);
+        PlayerPrefs.SetFloat("sensitivityY", CameraLook.MouseSensitivityY);*/
         PlayerPrefs.SetFloat("fov", Camera.main.fieldOfView);
         PlayerPrefs.SetInt("qualityIndex", currentQualityIndex);
         PlayerPrefs.SetInt("isFullscreen", Convert.ToInt32(Screen.fullScreen));
@@ -103,10 +103,10 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         audioMixer.SetFloat("Master Volume", Mathf.Log10(PlayerPrefs.GetFloat("volume", 0)) * 20);
         volume.value = Mathf.Pow(10, PlayerPrefs.GetFloat("volume", 0)/20);
-        CameraLook.MouseSensitivityX = PlayerPrefs.GetFloat("sensitivityX", 300);
+/*        CameraLook.MouseSensitivityX = PlayerPrefs.GetFloat("sensitivityX", 300);
         sensitivityX.value = CameraLook.MouseSensitivityX;
         CameraLook.MouseSensitivityY = PlayerPrefs.GetFloat("sensitivityY", 300);
-        sensitivityY.value = CameraLook.MouseSensitivityY;
+        sensitivityY.value = CameraLook.MouseSensitivityY;*/
         Camera.main.fieldOfView = PlayerPrefs.GetFloat("fov", 90);
         fov.value = Camera.main.fieldOfView;
         SetQuality(PlayerPrefs.GetInt("qualityIndex", 0));
