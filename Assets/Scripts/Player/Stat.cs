@@ -12,7 +12,7 @@ public class Stat : MonoBehaviour
     [SerializeField] protected float maxStat = default;
     public float RegenAmount { get { return regenAmount; } set { regenAmount = value; } }
     [SerializeField] protected float regenAmount = default;
-    protected float currentStat = default;
+    [SerializeField] protected float currentStat = default;
 
     protected virtual void Start()
     {

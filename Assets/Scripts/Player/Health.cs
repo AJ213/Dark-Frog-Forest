@@ -6,7 +6,7 @@ public class Health : Stat
 {
     [SerializeField] protected GameObject deathEffect = default;
     [SerializeField] protected AudioSource hitSound = default;
-    [SerializeField] protected bool isDead = false;
+    [SerializeField] public bool isDead = false;
      
     public override float CurrrentStat
     {
@@ -25,13 +25,20 @@ public class Health : Stat
             {
                 Death();
                 isDead = true;
+                return;
             }
             else if (currentStat > maxStat)
             {
                 currentStat = maxStat;
             }
+            isDead = false;
         }
     }
+    public virtual void Revive()
+    {
+        UpdateMaxStat();
+    }
+
     protected virtual void Death()
     {
         GameObject go = Instantiate(deathEffect, this.transform.position, Quaternion.identity);
