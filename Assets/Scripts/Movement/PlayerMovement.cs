@@ -45,6 +45,10 @@ public class PlayerMovement : Gravity
             velocity.y = 0;
         }
         velocity.y += Mathf.Sqrt(jumpHeight * -2f * -gravityConstant);
-        jumpSound.Play();
+
+        if(jumpSound != null)
+        {
+            jumpSound.Play();
+        } 
     }
 }
