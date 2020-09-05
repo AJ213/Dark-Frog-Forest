@@ -48,7 +48,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
-        settings.SaveSettings();
         Application.Quit();
     }
 }
