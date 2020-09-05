@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class CheckpointManager : MonoBehaviour
 {
     public Transform lastCheckpoint = default;
@@ -10,6 +10,5 @@ public class CheckpointManager : MonoBehaviour
     { 
         this.transform.position = lastCheckpoint.position + Vector3.up;
         Player.player.GetComponent<PlayerHealth>().Revive();
-        
     }
 }
