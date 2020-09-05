@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
 
-	public static AudioManager instance;
 
 	public AudioMixerGroup mixerGroup;
 
@@ -13,16 +12,6 @@ public class AudioManager : MonoBehaviour
 
 	void Awake()
 	{
-		if (instance != null)
-		{
-			Destroy(gameObject);
-		}
-		else
-		{
-			instance = this;
-/*			DontDestroyOnLoad(gameObject);*/
-		}
-
 		foreach (Sound s in sounds)
 		{
 			s.source = gameObject.AddComponent<AudioSource>();
@@ -48,13 +37,16 @@ public class AudioManager : MonoBehaviour
 		{
 			Play("Music");
 		}
-		if(SceneManager.GetActiveScene().buildIndex == 1)
+		if(SceneManager.GetActiveScene().buildIndex == 1 && this.gameObject.CompareTag("GameController"))
         {
 			Play("Music");
 			Play("Ambience");
+		}
+		if (SceneManager.GetActiveScene().buildIndex == 1 && this.gameObject.CompareTag("Player"))
+		{
 			Play("CharacterSounds");
 		}
-    }
+	}
 
     public void Play(string sound)
 	{
