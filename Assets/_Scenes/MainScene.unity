@@ -584,7 +584,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476547268}
-  m_LocalRotation: {x: 0.10649046, y: -0.0000000042771338, z: 4.580787e-10, w: 0.9943138}
+  m_LocalRotation: {x: 0.10649046, y: 0.0000000042771364, z: -4.5807902e-10, w: 0.9943138}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -895,10 +895,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: CharacterSounds
     clip: {fileID: 8300000, guid: b67a52cb73e2c484a9eb8e004d50b6bd, type: 3}
-    volume: 1
-    volumeVariance: 0
+    volume: 0.025
+    volumeVariance: 0.025
     pitch: 1
-    pitchVariance: 0
+    pitchVariance: 0.025
     priority: 0
     loop: 1
     mixerGroup: {fileID: 24300002, guid: 697025bdf254b1d4082477940fed2375, type: 2}
@@ -1420,7 +1420,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.12451124, y: -0.000000032223607, z: 0.0000000040436685, w: 0.9922182}
+  m_LocalRotation: {x: 0.12451124, y: 0.000000032223607, z: -0.0000000040436685, w: 0.9922182}
   m_LocalPosition: {x: 0, y: 11, z: -17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6606,7 +6606,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195999024}
-  m_LocalRotation: {x: 0.12451125, y: -0.000000012804362, z: 0.0000000016067907, w: 0.9922182}
+  m_LocalRotation: {x: 0.12451125, y: 0.000000012804364, z: -0.0000000016067909, w: 0.9922182}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12841,16 +12841,6 @@ MonoBehaviour:
   - name: Music
     clip: {fileID: 8300000, guid: be36e269071e1db4b8647d3336071ec0, type: 3}
     volume: 0
-    volumeVariance: 0.1
-    pitch: 1
-    pitchVariance: 0
-    priority: 0
-    loop: 1
-    mixerGroup: {fileID: 24300002, guid: 697025bdf254b1d4082477940fed2375, type: 2}
-    source: {fileID: 0}
-  - name: CharacterSounds
-    clip: {fileID: 8300000, guid: b67a52cb73e2c484a9eb8e004d50b6bd, type: 3}
-    volume: 0.025
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0

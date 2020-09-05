@@ -42,7 +42,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            animator.SetTrigger("Jump");
+            //animator.SetTrigger("Jump");
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
         if (isGrounded)
