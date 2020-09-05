@@ -8,6 +8,11 @@ public class CheckpointManager : MonoBehaviour
     [SerializeField] Transform startingCheckpoint = default;
     public void LoadCheckpoint()
     { 
+        if(lastCheckpoint == null)
+        {
+            lastCheckpoint = startingCheckpoint;
+        }
+
         this.transform.position = lastCheckpoint.position + Vector3.up;
         Player.player.GetComponent<PlayerHealth>().Revive();
     }
