@@ -5,12 +5,13 @@ using UnityEngine;
 public class ThirdPersonMovement : MonoBehaviour
 {
     [SerializeField] CharacterController controller = default;
+    [SerializeField] Animator animator = default;
     [SerializeField] Transform cam = default;
 
     [SerializeField] float speed = 6;
-    [SerializeField] float gravity = -9.81f;
+    float gravity = -9.81f;
     [SerializeField] float jumpHeight = 3;
-    Vector3 velocity;
+    [SerializeField] Vector3 velocity = default;
     bool isGrounded;
 
     [SerializeField] Transform groundCheck = default;
@@ -37,10 +38,24 @@ public class ThirdPersonMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+            
+        }
+        if (isGrounded)
+        {
+            animator.SetTrigger("Land");
+        }
+        if(velocity.y < -3)
+        {
+            animator.SetBool("Falling", true);
+        }
+        else
+        {
+            animator.SetBool("Falling", false);
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            animator.SetTrigger("Jump");
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
     }
@@ -58,12 +73,18 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
+            animator.SetBool("Walking", true);
+
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
         }
     }
 }
