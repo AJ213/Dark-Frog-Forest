@@ -7463,6 +7463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4428831281119010018, guid: 78d88be701d245e4e9ec38162fc8cdd7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 268465a3227164e449cc3c9972134406, type: 2}
     - target: {fileID: 919132149155446097, guid: 78d88be701d245e4e9ec38162fc8cdd7, type: 3}
       propertyPath: m_Name
       value: Frog_Walk_Animation_UV1
@@ -7471,6 +7475,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3084889667584911811, guid: 78d88be701d245e4e9ec38162fc8cdd7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 268465a3227164e449cc3c9972134406, type: 2}
+    - target: {fileID: 8109538960090490906, guid: 78d88be701d245e4e9ec38162fc8cdd7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 268465a3227164e449cc3c9972134406, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78d88be701d245e4e9ec38162fc8cdd7, type: 3}
 --- !u!4 &1817642315 stripped
