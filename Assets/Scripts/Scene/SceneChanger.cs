@@ -21,6 +21,19 @@ public class SceneChanger : MonoBehaviour
         GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                Cursor.lockState = CursorLockMode.None;
+                
+                FadeToScene(0);
+            }
+        }
+    }
+
     public void LoadScene()
     {
         if(indexToLoad == -1)
