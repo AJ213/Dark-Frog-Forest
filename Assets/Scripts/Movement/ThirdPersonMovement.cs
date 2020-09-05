@@ -40,24 +40,22 @@ public class ThirdPersonMovement : MonoBehaviour
             velocity.y = -2f;
             
         }
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            //animator.SetTrigger("Jump");
+            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+        }
         if (isGrounded)
         {
             animator.SetTrigger("Land");
-        }
-        if(velocity.y < -3)
-        {
-            animator.SetBool("Falling", true);
+            animator.SetBool("Falling", false);
         }
         else
         {
-            animator.SetBool("Falling", false);
+            animator.SetBool("Falling", true);
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            animator.SetTrigger("Jump");
-            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-        }
+        
     }
     void Fall()
     {
