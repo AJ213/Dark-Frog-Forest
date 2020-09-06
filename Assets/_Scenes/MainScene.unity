@@ -18633,7 +18633,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476547268}
-  m_LocalRotation: {x: 0.09637958, y: -4.3581963e-16, z: 6.018224e-17, w: 0.99534464}
+  m_LocalRotation: {x: 0.096379586, y: 0.000000007415896, z: -7.180839e-10, w: 0.99534464}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -26189,7 +26189,7 @@ MonoBehaviour:
   sounds:
   - name: Step1
     clip: {fileID: 8300000, guid: 51784bbf8367dcc4ab9defd2ba0b57a4, type: 3}
-    volume: 1
+    volume: 0.34
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26199,7 +26199,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Step2
     clip: {fileID: 8300000, guid: 08883ed30273d14429a0220e9f529351, type: 3}
-    volume: 1
+    volume: 0.43
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26209,7 +26209,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Step3
     clip: {fileID: 8300000, guid: e5205324261e73147b103b230b0e3653, type: 3}
-    volume: 1
+    volume: 0.26
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26219,7 +26219,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Step4
     clip: {fileID: 8300000, guid: 69317caf0bc4e8c46a6f3068d0524ce2, type: 3}
-    volume: 1
+    volume: 0.21
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26229,7 +26229,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: CharacterSounds
     clip: {fileID: 8300000, guid: b67a52cb73e2c484a9eb8e004d50b6bd, type: 3}
-    volume: 0.025
+    volume: 0.16
     volumeVariance: 0.025
     pitch: 1
     pitchVariance: 0.025
@@ -26239,7 +26239,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: LanternMove1
     clip: {fileID: 8300000, guid: a5a8baab81818dd4ea439f3f9c4c67c2, type: 3}
-    volume: 1
+    volume: 0.44
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26249,7 +26249,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: LanternMove2
     clip: {fileID: 8300000, guid: acc22084dd7735c49bbe283eddcb2f9b, type: 3}
-    volume: 1
+    volume: 0.47
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26259,7 +26259,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jump1
     clip: {fileID: 8300000, guid: eb81af9ef12d6a6428b193b79cab6037, type: 3}
-    volume: 0
+    volume: 0.38
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26269,7 +26269,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jump2
     clip: {fileID: 8300000, guid: df315d434c7d5d349b6099376b1a8a63, type: 3}
-    volume: 1
+    volume: 0.49
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26279,7 +26279,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jump3
     clip: {fileID: 8300000, guid: 415fec03b6695d841aa1ceb312e48963, type: 3}
-    volume: 1
+    volume: 0.6
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26289,7 +26289,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Death
     clip: {fileID: 8300000, guid: b0369d7436f48d346b889d738adb41cc, type: 3}
-    volume: 1
+    volume: 0.62
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -26299,7 +26299,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Fly
     clip: {fileID: 8300000, guid: fe930b9bdaedfc64695913d6a1817e1e, type: 3}
-    volume: 1
+    volume: 0.15
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -38241,7 +38241,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.11944137, y: 0.000000034958013, z: -0.000000004205539, w: 0.9928413}
+  m_LocalRotation: {x: 0.11944137, y: -0.000000034958017, z: 0.0000000042055395, w: 0.9928413}
   m_LocalPosition: {x: 0, y: 18, z: -17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -48564,7 +48564,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195999024}
-  m_LocalRotation: {x: 0.11944136, y: 0.000000017083202, z: -0.0000000020551534, w: 0.99284124}
+  m_LocalRotation: {x: 0.11944136, y: -0.000000017083206, z: 0.0000000020551536, w: 0.99284124}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -84367,7 +84367,7 @@ MonoBehaviour:
   sounds:
   - name: Music
     clip: {fileID: 8300000, guid: 0208071c2a09fad4d9bba0967b023bc6, type: 3}
-    volume: 0.3
+    volume: 0.07
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -84377,7 +84377,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Ambience
     clip: {fileID: 8300000, guid: 226d3580c7c4036449a4d172d9001178, type: 3}
-    volume: 0.15
+    volume: 0.09
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0
@@ -84407,7 +84407,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: EndGame
     clip: {fileID: 8300000, guid: 73aefaa0873213144b5f22e0d10e5a1d, type: 3}
-    volume: 0.5
+    volume: 0.06
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0
