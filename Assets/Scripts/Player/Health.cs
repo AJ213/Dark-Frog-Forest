@@ -52,7 +52,7 @@ public class Health : Stat
         if (hitSound == null)
             return;
 
-        GetComponent<AudioManager>().Play("Death");
+        
     }
 
     

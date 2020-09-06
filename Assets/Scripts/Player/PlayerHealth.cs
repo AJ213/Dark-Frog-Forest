@@ -8,7 +8,7 @@ public class PlayerHealth : Health
     protected override void Death()
     {
         PlayerDead.Invoke();
-        
+        GetComponent<AudioManager>().Play("Death");
     }
 
 }
