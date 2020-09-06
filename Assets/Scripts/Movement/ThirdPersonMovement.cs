@@ -20,9 +20,16 @@ public class ThirdPersonMovement : MonoBehaviour
 
     float turnSmoothVelocity;
     [SerializeField] float turnSmoothTime = 0.1f;
+    AudioManager audioManager = default;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        audioManager = GetComponent<AudioManager>();
+        steps = new AudioSource[4];
+        for(int i = 1; i < 5; i++)
+        {
+            steps[i-1] = audioManager.GetAudioSource("Step" + i);
+        }
     }
     void Update()
     {
@@ -72,6 +79,11 @@ public class ThirdPersonMovement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             animator.SetBool("Walking", true);
+            if(isGrounded)
+            {
+                Step();
+            }
+            
 
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -85,4 +97,30 @@ public class ThirdPersonMovement : MonoBehaviour
             animator.SetBool("Walking", false);
         }
     }
+
+     float stepSpeed = 0.6f;
+    [SerializeField] bool stepping = false;
+    AudioSource[] steps = default;
+    void Step()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            steps[i].loop = false;
+        }
+
+        if (!stepping)
+        {
+            StartCoroutine(StepWait());
+            steps[Random.Range(0, 4)].Play();
+        }
+
+    }
+
+    IEnumerator StepWait()
+    {
+        stepping = true;
+        yield return new WaitForSeconds(stepSpeed);
+        stepping = false;
+    }
+
 }
