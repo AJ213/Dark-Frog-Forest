@@ -260,7 +260,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: ButtonHover
     clip: {fileID: 8300000, guid: 5a99f22c6e680624f9bc909b4a1fd207, type: 3}
-    volume: 0.04
+    volume: 0.07
     volumeVariance: 0.1
     pitch: 1
     pitchVariance: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: ButtonPress
     clip: {fileID: 8300000, guid: f1fc7af45185c0a43bab063bc323129d, type: 3}
-    volume: 0.055
+    volume: 0.07
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
