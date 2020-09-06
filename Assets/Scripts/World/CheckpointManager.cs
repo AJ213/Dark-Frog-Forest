@@ -13,7 +13,7 @@ public class CheckpointManager : MonoBehaviour
             lastCheckpoint = startingCheckpoint;
         }
 
-        this.transform.position = lastCheckpoint.position + Vector3.up;
+        this.transform.position = lastCheckpoint.position + 2*Vector3.up;
         Player.player.GetComponent<PlayerHealth>().Revive();
     }
 }

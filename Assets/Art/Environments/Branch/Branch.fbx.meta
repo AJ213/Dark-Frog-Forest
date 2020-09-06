@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 39f8ca52b8c9bc74aa1fdc4310de042e
+guid: 9160159bbacfdfd43ac6b3d8dd983d41
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 531659688c9b58f4aa6c78f31171658d, type: 2}
+      name: Bark
+    second: {fileID: 2100000, guid: fb9c23dee6c479c4a9123892bc89eb06, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -39,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
