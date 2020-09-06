@@ -73,7 +73,6 @@ public class MovingObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Help");
         other.transform.parent = transform;
         if (!automatic)
         {
@@ -83,6 +82,10 @@ public class MovingObject : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         other.transform.parent = null;
+        if (!automatic)
+        {
+            NextTarget();
+        }
     }
 
 }
