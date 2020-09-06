@@ -57,7 +57,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            jumps[Random.Range(0, 3)].Play();
+            audioManager.Play("Jump" + Random.Range(1, jumps.Length + 1));
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
         if (isGrounded)
@@ -115,6 +115,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (!stepping)
         {
             StartCoroutine(StepWait());
+            audioManager.Play("Step" + Random.Range(1, steps.Length + 1));
             steps[Random.Range(0, steps.Length)].Play();
         }
     }
@@ -126,7 +127,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (!lanternMoving)
         {
             StartCoroutine(LanternMoveWait());
-            lanterns[Random.Range(0, lanterns.Length)].Play();
+            audioManager.Play("LanternMove" + Random.Range(1, lanterns.Length+1));
         }
     }
     IEnumerator StepWait()
