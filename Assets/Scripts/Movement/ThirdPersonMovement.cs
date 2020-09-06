@@ -25,10 +25,17 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         audioManager = GetComponent<AudioManager>();
-        steps = new AudioSource[4];
-        for(int i = 1; i < 5; i++)
+        for(int i = 1; i < steps.Length+1; i++)
         {
             steps[i-1] = audioManager.GetAudioSource("Step" + i);
+        }
+        for (int i = 1; i < jumps.Length+1; i++)
+        {
+            jumps[i - 1] = audioManager.GetAudioSource("Jump" + i);
+        }
+        for (int i = 1; i < lanterns.Length+1; i++)
+        {
+            lanterns[i - 1] = audioManager.GetAudioSource("LanternMove" + i);
         }
     }
     void Update()
@@ -38,6 +45,7 @@ public class ThirdPersonMovement : MonoBehaviour
         Move();
     }
 
+    AudioSource[] jumps = new AudioSource[3];
     void Jump()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -49,7 +57,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            //animator.SetTrigger("Jump");
+            jumps[Random.Range(0, 3)].Play();
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
         if (isGrounded)
@@ -69,7 +77,7 @@ public class ThirdPersonMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-
+    
     void Move()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -82,6 +90,7 @@ public class ThirdPersonMovement : MonoBehaviour
             if(isGrounded)
             {
                 Step();
+                LanternMove();
             }
             
 
@@ -98,29 +107,38 @@ public class ThirdPersonMovement : MonoBehaviour
         }
     }
 
-     float stepSpeed = 0.6f;
+    float stepSpeed = 0.6f;
     [SerializeField] bool stepping = false;
-    AudioSource[] steps = default;
+    AudioSource[] steps = new AudioSource[4];
     void Step()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            steps[i].loop = false;
-        }
-
         if (!stepping)
         {
             StartCoroutine(StepWait());
-            steps[Random.Range(0, 4)].Play();
+            steps[Random.Range(0, steps.Length)].Play();
         }
-
     }
-
+    float lanternMoveSpeed = 1.2f;
+    [SerializeField] bool lanternMoving = false;
+    AudioSource[] lanterns = new AudioSource[2];
+    void LanternMove()
+    {
+        if (!lanternMoving)
+        {
+            StartCoroutine(LanternMoveWait());
+            lanterns[Random.Range(0, lanterns.Length)].Play();
+        }
+    }
     IEnumerator StepWait()
     {
         stepping = true;
         yield return new WaitForSeconds(stepSpeed);
         stepping = false;
     }
-
+    IEnumerator LanternMoveWait()
+    {
+        lanternMoving = true;
+        yield return new WaitForSeconds(lanternMoveSpeed);
+        lanternMoving = false;
+    }
 }

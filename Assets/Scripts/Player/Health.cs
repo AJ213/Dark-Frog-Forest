@@ -41,6 +41,7 @@ public class Health : Stat
 
     protected virtual void Death()
     {
+
         GameObject go = Instantiate(deathEffect, this.transform.position, Quaternion.identity);
         Destroy(go, 2);
         Destroy(this.gameObject);
@@ -50,8 +51,8 @@ public class Health : Stat
     {
         if (hitSound == null)
             return;
-        if (!hitSound.isPlaying && hitSound.enabled)
-            hitSound.Play();
+
+        GetComponent<AudioManager>().Play("Death");
     }
 
     
