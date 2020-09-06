@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lambert1
+  m_Name: Mushroom
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 1
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 21b609edce03f4c49a83d36b1d43c17c, type: 3}
+        m_Texture: {fileID: 2800000, guid: c383689c39cadb04a888869cc7e19b89, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -36,15 +36,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: beef15b80d76e274dacffb98d773e2e5, type: 3}
+        m_Texture: {fileID: 2800000, guid: e0f69cfc22977084dab0f84343753183, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: dab1597858523f44c864f983efa10246, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5dd271c1311f348488e05ab968159e8b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 622acfa245c159b4186edaee24fde886, type: 3}
+        m_Texture: {fileID: 2800000, guid: 79bee5fdb08ea824e9538f0b6998ae43, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
