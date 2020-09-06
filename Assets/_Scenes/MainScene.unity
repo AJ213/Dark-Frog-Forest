@@ -7425,7 +7425,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.12451124, y: -0.000000032223607, z: 0.0000000040436685, w: 0.9922182}
+  m_LocalRotation: {x: 0.12451124, y: 0.000000032223607, z: -0.0000000040436685, w: 0.9922182}
   m_LocalPosition: {x: 0, y: 17.67, z: -17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8067,7 +8067,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195999024}
-  m_LocalRotation: {x: 0.12451125, y: -0.000000012804362, z: 0.0000000016067907, w: 0.9922182}
+  m_LocalRotation: {x: 0.12451125, y: 0.000000012804364, z: -0.0000000016067909, w: 0.9922182}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -20006,13 +20006,25 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.w
       value: -2.2394105e+24
       objectReference: {fileID: 0}
+    - target: {fileID: 327233240977128596, guid: 436cf210a3028844794cc0de4dcb0315, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.511
+      objectReference: {fileID: 0}
+    - target: {fileID: 327233240977128596, guid: 436cf210a3028844794cc0de4dcb0315, type: 3}
+      propertyPath: m_ShadowRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 327233240977128596, guid: 436cf210a3028844794cc0de4dcb0315, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1191981776959324934, guid: 436cf210a3028844794cc0de4dcb0315, type: 3}
       propertyPath: m_Name
       value: Mushroom Checkpoint 0
       objectReference: {fileID: 0}
     - target: {fileID: 1999903558422895036, guid: 436cf210a3028844794cc0de4dcb0315, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.11
+      value: 10.88
       objectReference: {fileID: 0}
     - target: {fileID: 1999903558422895036, guid: 436cf210a3028844794cc0de4dcb0315, type: 3}
       propertyPath: m_LocalPosition.y
